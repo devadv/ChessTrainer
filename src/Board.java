@@ -26,9 +26,17 @@ public class Board {
 
 
     public void printBoard() {
-
-
-
+        for(int row = 0; row < board.length; row++){
+            System.out.print(board.length - row + " ");
+            for(int col = 0; col < board[row].length; col++){
+                System.out.print(board[row][col] + " ");
+            }
+            System.out.println();
+        }
+        System.out.print("  ");
+        for(char i = 'a'; i < 'i'; i++){
+            System.out.print(i + " ");
+        }
     }
 
     /*
