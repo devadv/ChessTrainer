@@ -2,11 +2,11 @@ public class Board {
     /*verantwoordelijk voor het bijhouden van de positie van de stukken op het bord*/
 
     private char[][] board = new char[8][8];
-    private String startposition;
+    private String startPosition;
 
     public Board(){
         /*bord wordt gemaakt met begin positie van de stukken*/
-        startposition =
+        startPosition =
                 "rnbqkbnr"+
                 "pppppppp"+
                 "........"+
@@ -19,7 +19,7 @@ public class Board {
         int index = 0;
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col <8; col++) {
-                board[row][col] = startposition.charAt(index++);
+                board[row][col] = startPosition.charAt(index++);
             }
         }
     }
@@ -37,6 +37,19 @@ public class Board {
         for(char i = 'a'; i < 'i'; i++){
             System.out.print(i + " ");
         }
+    }
+    public void move(String move){
+
+        String[] m  = move.split("-");
+        String start = m[0];
+        String end = m[1];
+        System.out.println(start + "-" + end);
+        int[] startPosition = CoordinateSystem.coordinateToIndex(start);
+        int[] endPosition = CoordinateSystem.coordinateToIndex(end);
+        char piece =  board[startPosition[0]][startPosition[1]];
+
+        board[startPosition[0]][startPosition[1]] = '.';
+        board[endPosition[0]][endPosition[1]] = piece;
     }
 
     /*
