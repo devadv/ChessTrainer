@@ -29,7 +29,7 @@ public class CoordinateSystem {
 
         String file = FILES[index[1]];    // file or column
         //System.out.println(file);
-        int rank = 8 - index[0];
+        int rank = 8 - index[1];
         //System.out.println(file + rank);
         String output = file + rank;
 
