@@ -17,7 +17,7 @@ public class ChessTrainer {
                 board.move(move);
                 board.printBoard();
                 whosTurn = false;
-            }else {
+            } else {
                 System.out.println("Black's turn");
                 System.out.print("Enter a move?");
                 String move = input.nextLine();
