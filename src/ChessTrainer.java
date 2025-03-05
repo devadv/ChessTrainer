@@ -4,26 +4,26 @@ public class ChessTrainer {
 
     public static void main(String[] args) {
         Board board = new Board();
-        boolean whosTurn = true;
+        boolean isWhiteMove = true;
         board.printBoard();
         Scanner input = new Scanner(System.in);
 
         while (true) {
             System.out.println();
-            if (whosTurn) {
-                System.out.println("White's turn");
+            if (isWhiteMove) {
+                System.out.println("White's move");
                 System.out.print("Enter  move?");
                 String move = input.nextLine();
                 board.move(move);
                 board.printBoard();
-                whosTurn = false;
+                isWhiteMove = false;
             } else {
-                System.out.println("Black's turn");
+                System.out.println("Black's move");
                 System.out.print("Enter a move?");
                 String move = input.nextLine();
                 board.move(move);
                 board.printBoard();
-                whosTurn = true;
+                isWhiteMove = true;
             }
         }
         //System.out.println(CoordinateSystem.coordinateToIndex("e2")[0] + "," + CoordinateSystem.coordinateToIndex("e2")[1]);

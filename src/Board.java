@@ -38,11 +38,14 @@ public class Board {
             System.out.print(i + " ");
         }
     }
+    /* method move() gets move represented by a string from method parameter*/
     public void move(String move){
 
         String[] m  = move.split("-");
+
         String start = m[0];
         String end = m[1];
+
         System.out.println(start + "-" + end);
         int[] startPosition = CoordinateSystem.coordinateToIndex(start);
         int[] endPosition = CoordinateSystem.coordinateToIndex(end);
