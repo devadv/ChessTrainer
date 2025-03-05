@@ -42,7 +42,7 @@ public class Board {
     }
 
     /* method move() gets the move entered by the user as method parameter
-       name of the method parameter is move of type String*/
+       name of the method parameter is move of type String */
     public void move(String move) {
 
         String[] m = move.split("-");
