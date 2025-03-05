@@ -1,24 +1,26 @@
+import java.util.Arrays;
+
 public class Board {
     /*verantwoordelijk voor het bijhouden van de positie van de stukken op het bord*/
 
     private char[][] board = new char[8][8];
     private String startPosition;
 
-    public Board(){
+    public Board() {
         /*bord wordt gemaakt met begin positie van de stukken*/
         startPosition =
-                "rnbqkbnr"+
-                "pppppppp"+
-                "........"+
-                "........"+
-                "........"+
-                "........"+
-                "PPPPPPPP"+
-                "RNBQKBNR";
+                "rnbqkbnr" +
+                        "pppppppp" +
+                        "........" +
+                        "........" +
+                        "........" +
+                        "........" +
+                        "PPPPPPPP" +
+                        "RNBQKBNR";
 
         int index = 0;
         for (int row = 0; row < 8; row++) {
-            for (int col = 0; col <8; col++) {
+            for (int col = 0; col < 8; col++) {
                 board[row][col] = startPosition.charAt(index++);
             }
         }
@@ -26,30 +28,35 @@ public class Board {
 
 
     public void printBoard() {
-        for(int row = 0; row < board.length; row++){
+        for (int row = 0; row < board.length; row++) {
             System.out.print(board.length - row + " ");
-            for(int col = 0; col < board[row].length; col++){
+            for (int col = 0; col < board[row].length; col++) {
                 System.out.print(board[row][col] + " ");
             }
             System.out.println();
         }
         System.out.print("  ");
-        for(char i = 'a'; i < 'i'; i++){
+        for (char i = 'a'; i < 'i'; i++) {
             System.out.print(i + " ");
         }
     }
-    /* method move() gets the move from method parameter move*/
-    public void move(String move){
 
-        String[] m  = move.split("-");
+    /* method move() gets the move entered by the user as method parameter
+       name of the method parameter is move of type String*/
+    public void move(String move) {
+
+        String[] m = move.split("-");
 
         String start = m[0];
         String end = m[1];
 
-        System.out.println(start + "-" + end);
+        //System.out.println(Arrays.toString(m));
+
+        //System.out.println(start + "-" + end);
         int[] startPosition = CoordinateSystem.coordinateToIndex(start);
         int[] endPosition = CoordinateSystem.coordinateToIndex(end);
-        char piece =  board[startPosition[0]][startPosition[1]];
+
+        char piece = board[startPosition[0]][startPosition[1]];
 
         board[startPosition[0]][startPosition[1]] = '.';
         board[endPosition[0]][endPosition[1]] = piece;
