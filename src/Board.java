@@ -38,7 +38,7 @@ public class Board {
             System.out.print(i + " ");
         }
     }
-    /* method move() gets move represented by a string from method parameter*/
+    /* method move() gets the move from method parameter move*/
     public void move(String move){
 
         String[] m  = move.split("-");
